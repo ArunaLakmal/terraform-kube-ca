@@ -1,0 +1,16 @@
+{
+    "CN": "admin",
+    "key": {
+      "algo": "rsa",
+      "size": 2048
+    },
+    "names": [
+      {
+        "C": "SL",
+        "L": "Colombo",
+        "O": "system:masters",
+        "OU": "TechCrumble",
+        "ST": "Western"
+      }
+    ]
+  }
