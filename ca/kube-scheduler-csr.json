@@ -1,16 +1,16 @@
 {
-    "CN": "system:kube-scheduler",
-    "key": {
-      "algo": "rsa",
-      "size": 2048
-    },
-    "names": [
-      {
-        "C": "SL",
-        "L": "Colombo",
-        "O": "system:kube-scheduler",
-        "OU": "TechCrumble",
-        "ST": "Western"
-      }
-    ]
-  }
+  "CN": "system:kube-scheduler",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:kube-scheduler",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "Oregon"
+    }
+  ]
+}
