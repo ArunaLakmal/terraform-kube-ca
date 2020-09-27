@@ -22,7 +22,7 @@ cfssl gencert \
   -ca-key=ca-key.pem \
   -config=./ca/ca-config.json \
   -profile=kubernetes \
-  kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
+  ./ca/kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
 
 #----- Kube Proxy -----
 cfssl gencert \
@@ -30,7 +30,7 @@ cfssl gencert \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
   -profile=kubernetes \
-  kube-proxy-csr.json | cfssljson -bare kube-proxy
+  ./ca/kube-proxy-csr.json | cfssljson -bare kube-proxy
 
 #----- Kube Scheduler ------
 cfssl gencert \
@@ -38,7 +38,7 @@ cfssl gencert \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
   -profile=kubernetes \
-  kube-scheduler-csr.json | cfssljson -bare kube-scheduler
+  ./ca/kube-scheduler-csr.json | cfssljson -bare kube-scheduler
 
 #----- Service Account  -----
 cfssl gencert \
@@ -46,4 +46,4 @@ cfssl gencert \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
   -profile=kubernetes \
-  service-account-csr.json | cfssljson -bare service-account
+  ./ca/service-account-csr.json | cfssljson -bare service-account

@@ -11,3 +11,44 @@
     }
   }
 }
+
+- hosts: localhost
+  gather_facts: no
+  vars: 
+    certificate: 
+      signing:
+        default:
+          expiry: 8760h
+        profiles:
+          kubernetes:
+            usages:
+            - signing
+            - key encipherment
+            - server auth
+            - client auth
+            expiry: 8760h
+      
+  tasks:
+    - copy:
+        dest: ./ca/ca-config.json
+        content: "{{ certificate | to_json }}"
+
+- hosts: localhost
+  gather_facts: no
+  vars:
+    cacsr:
+      CN: Kubernetes
+      key:
+        algo: rsa
+        size: 2048
+      names:
+      - C: US
+        L: Portland
+        O: Kubernetes
+        OU: CA
+        ST: Oregon
+      
+  tasks:
+    - copy:
+        dest: ./ca/ca-csr.json
+        content: "{{ cacsr | to_json }}"
